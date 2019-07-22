@@ -34,6 +34,7 @@ class MainViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
         cell.textLabel?.text = cinemaNames[indexPath.row]
+        cell.imageView?.image = UIImage(named: cinemaNames[indexPath.row])
         return cell
     }
 
