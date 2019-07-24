@@ -8,43 +8,31 @@
 
 import UIKit
 
-class MainViewController: UITableViewController {
-
-    let cinemaNames = [
-        "СИНЕМА ПАРК Метрополис на Войковской", "KAPO SKY 17 Авиапарк",
-        "Синема Парк", "Киномакс-Водный", "Кинотеатр Юность",
-        "Формула Кино на Полежаевской", "Кинотеатр «Москва»",
-        "Искра", "Балтика", "Кинотеатр Пионер","Киноцентр «Соловей»", "Полет",
-        "Киносфера IMAX", "Каро 11 Октябрь", "Алмаз Синема Алтуфьевский"
-    ]
+class MainViewController: UITableViewController {    
     
+    let cinema = Cinema.getCinema()
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       
     }
 
     // MARK: - Table view data source
    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cinemaNames.count
+        return cinema.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
         
-        cell.nameLabel?.text = cinemaNames[indexPath.row]
-        cell.imageOfPlace?.image = UIImage(named: cinemaNames[indexPath.row])
+        cell.nameLabel?.text = cinema[indexPath.row].name
+        cell.imageOfPlace?.image = UIImage(named: cinema[indexPath.row].image)
+        cell.priceLabel.text = cinema[indexPath.row].price
+        cell.locationLabel.text = cinema[indexPath.row].location
+        
         cell.imageOfPlace?.layer.cornerRadius = cell.imageOfPlace.frame.size.height / 2
         cell.imageOfPlace?.clipsToBounds = true
         
         return cell
-    }
-    
-    // MARK: - Table view delegate
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 85
     }
 
     /*
@@ -57,4 +45,7 @@ class MainViewController: UITableViewController {
     }
     */
 
+    @IBAction func cancelAction(_ segue: UIStoryboardSegue) {
+        
+    }
 }
