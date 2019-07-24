@@ -15,9 +15,11 @@
 		9891151E22E5AC750050B82D /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9891151D22E5AC750050B82D /* CustomTableViewCell.swift */; };
 		9891152022E8467D0050B82D /* CinamaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9891151F22E8467D0050B82D /* CinamaModel.swift */; };
 		9891152222E853640050B82D /* NewCinemaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9891152122E853640050B82D /* NewCinemaViewController.swift */; };
+		AD6EC7CCAFD1C704213C2A5B /* Pods_MyCinema.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC83DF70843CE45275568D18 /* Pods_MyCinema.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0951FD70E32C3B79B36D9B46 /* Pods-MyCinema.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyCinema.release.xcconfig"; path = "Target Support Files/Pods-MyCinema/Pods-MyCinema.release.xcconfig"; sourceTree = "<group>"; };
 		9891150622E59DA50050B82D /* MyCinema.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCinema.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9891150922E59DA50050B82D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9891150E22E59DA50050B82D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -28,6 +30,8 @@
 		9891151D22E5AC750050B82D /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		9891151F22E8467D0050B82D /* CinamaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinamaModel.swift; sourceTree = "<group>"; };
 		9891152122E853640050B82D /* NewCinemaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCinemaViewController.swift; sourceTree = "<group>"; };
+		CC83DF70843CE45275568D18 /* Pods_MyCinema.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyCinema.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D84DF5B4A3F40DE145EF0B2F /* Pods-MyCinema.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyCinema.debug.xcconfig"; path = "Target Support Files/Pods-MyCinema/Pods-MyCinema.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +39,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD6EC7CCAFD1C704213C2A5B /* Pods_MyCinema.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		78A0A7041C1FC85C1012F160 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CC83DF70843CE45275568D18 /* Pods_MyCinema.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		989114FD22E59DA50050B82D = {
 			isa = PBXGroup;
 			children = (
 				9891150822E59DA50050B82D /* MyCinema */,
 				9891150722E59DA50050B82D /* Products */,
+				C54E7615C5E640739F61C4C0 /* Pods */,
+				78A0A7041C1FC85C1012F160 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,6 +88,16 @@
 			path = MyCinema;
 			sourceTree = "<group>";
 		};
+		C54E7615C5E640739F61C4C0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D84DF5B4A3F40DE145EF0B2F /* Pods-MyCinema.debug.xcconfig */,
+				0951FD70E32C3B79B36D9B46 /* Pods-MyCinema.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -80,9 +105,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9891151822E59DA60050B82D /* Build configuration list for PBXNativeTarget "MyCinema" */;
 			buildPhases = (
+				E0328E010BAB44829753CDA4 /* [CP] Check Pods Manifest.lock */,
 				9891150222E59DA50050B82D /* Sources */,
 				9891150322E59DA50050B82D /* Frameworks */,
 				9891150422E59DA50050B82D /* Resources */,
+				1D9534EDED1CC7D92BFA2F70 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -138,6 +165,55 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1D9534EDED1CC7D92BFA2F70 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyCinema/Pods-MyCinema-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyCinema/Pods-MyCinema-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E0328E010BAB44829753CDA4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MyCinema-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9891150222E59DA50050B82D /* Sources */ = {
@@ -292,6 +368,7 @@
 		};
 		9891151922E59DA60050B82D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D84DF5B4A3F40DE145EF0B2F /* Pods-MyCinema.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -310,6 +387,7 @@
 		};
 		9891151A22E59DA60050B82D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0951FD70E32C3B79B36D9B46 /* Pods-MyCinema.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
