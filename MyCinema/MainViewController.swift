@@ -10,7 +10,7 @@ import UIKit
 
 class MainViewController: UITableViewController {    
     
-    let cinema = Cinema.getCinema()
+    var movieTheaters = Cinema.getCinema()
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -18,19 +18,27 @@ class MainViewController: UITableViewController {
     // MARK: - Table view data source
    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cinema.count
+        return movieTheaters.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
         
-        cell.nameLabel?.text = cinema[indexPath.row].name
-        cell.imageOfPlace?.image = UIImage(named: cinema[indexPath.row].image)
-        cell.priceLabel.text = cinema[indexPath.row].price
-        cell.locationLabel.text = cinema[indexPath.row].location
+        let cinema = movieTheaters[indexPath.row]
         
-        cell.imageOfPlace?.layer.cornerRadius = cell.imageOfPlace.frame.size.height / 2
-        cell.imageOfPlace?.clipsToBounds = true
+        cell.nameLabel?.text = cinema.name
+        cell.detailLocationLabel.text = cinema.detailLocation
+        cell.locationLabel.text = cinema.location
+        
+        if cinema.image == nil {
+            cell.imageOfCinema.image = UIImage(named: cinema.cinemaImage!)
+        } else {
+            cell.imageOfCinema.image = cinema.image
+        }
+        
+        
+        cell.imageOfCinema?.layer.cornerRadius = cell.imageOfCinema.frame.size.height / 2
+        cell.imageOfCinema?.clipsToBounds = true
         
         return cell
     }
@@ -45,7 +53,11 @@ class MainViewController: UITableViewController {
     }
     */
 
-    @IBAction func cancelAction(_ segue: UIStoryboardSegue) {
+    @IBAction func unwindSegue(_ segue: UIStoryboardSegue) {
         
+        guard let newCinemaVC = segue.source as? NewCinemaViewController else {return}
+        newCinemaVC.saveNewCinema()
+        movieTheaters.append(newCinemaVC.newCinema!)
+        tableView.reloadData()
     }
 }

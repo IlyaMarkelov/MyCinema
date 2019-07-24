@@ -66,10 +66,10 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="imageOfPlace" destination="jkU-IB-kqh" id="nfb-3e-siQ"/>
+                                    <outlet property="detailLocationLabel" destination="Ee9-s5-84W" id="7hy-90-fLQ"/>
+                                    <outlet property="imageOfCinema" destination="jkU-IB-kqh" id="nfb-3e-siQ"/>
                                     <outlet property="locationLabel" destination="FB0-ft-Pf0" id="Td3-sr-34D"/>
                                     <outlet property="nameLabel" destination="Nf9-cT-oYY" id="9Nq-tn-dDg"/>
-                                    <outlet property="priceLabel" destination="Ee9-s5-84W" id="7hy-90-fLQ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -110,7 +110,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Photo" translatesAutoresizingMaskIntoConstraints="NO" id="rzV-st-E39">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="249.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="249.50000000000006"/>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -241,13 +241,21 @@
                     <navigationItem key="navigationItem" title="Новый кинотеатр" id="vAa-cc-vPe">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Edo-9V-3Hg">
                             <connections>
-                                <segue destination="kPP-w5-0W6" kind="unwind" unwindAction="cancelAction:" id="Q3F-3i-FEn"/>
+                                <action selector="cancelAction:" destination="vlA-M1-Nqk" id="Wnf-qj-fsp"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="t2Z-A3-FHC"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="t2Z-A3-FHC">
+                            <connections>
+                                <segue destination="kPP-w5-0W6" kind="unwind" unwindAction="unwindSegue:" id="8tp-eH-9ub"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="imageOfPlace" destination="rzV-st-E39" id="to1-0f-syQ"/>
+                        <outlet property="cinemaImage" destination="rzV-st-E39" id="to1-0f-syQ"/>
+                        <outlet property="cinemaLocation" destination="6WY-ty-xif" id="GPD-X4-a38"/>
+                        <outlet property="cinemaName" destination="0Al-fU-dYr" id="RTw-gp-q37"/>
+                        <outlet property="cinemaPrice" destination="vua-BS-KdW" id="Vmw-HM-SCS"/>
+                        <outlet property="saveButton" destination="t2Z-A3-FHC" id="GMp-3e-VtU"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X1W-yk-uo5" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -9,13 +9,24 @@
 import UIKit
 
 class NewCinemaViewController: UITableViewController {
+    
+    var newCinema: Cinema?
+    var imageIsChanged = false
 
-    @IBOutlet weak var imageOfPlace: UIImageView!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var cinemaImage: UIImageView!
+    @IBOutlet weak var cinemaName: UITextField!
+    @IBOutlet weak var cinemaPrice: UITextField!
+    @IBOutlet weak var cinemaLocation: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.tableFooterView = UIView()
+        
+        saveButton.isEnabled = false
+        
+        cinemaName.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
     }
     
     // MARK: Table view delegate
@@ -53,6 +64,9 @@ class NewCinemaViewController: UITableViewController {
         }
     }
 
+    @IBAction func cancelAction(_ sender: Any) {
+        dismiss(animated: true)
+    }
 }
 
 //MARK: Text field delegate
@@ -64,6 +78,32 @@ extension NewCinemaViewController: UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+    
+    @objc private func textFieldChanged() {
+        if cinemaName.text?.isEmpty == false {
+            saveButton.isEnabled = true
+        } else {
+            saveButton.isEnabled = false
+        }
+    }
+    
+    func saveNewCinema() {
+        
+        var image: UIImage?
+        
+        if imageIsChanged {
+            image = cinemaImage.image
+        } else {
+            image = #imageLiteral(resourceName: "imagePlaceHolder")
+        }
+        
+        newCinema = Cinema(name: cinemaName.text!,
+                           detailLocation: cinemaPrice.text,
+                           location: cinemaLocation.text,
+                           image: image,
+                           cinemaImage: nil)
+    }
+    
 }
 
 
@@ -82,9 +122,12 @@ extension NewCinemaViewController: UIImagePickerControllerDelegate, UINavigation
     
     func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        imageOfPlace.image = info[.editedImage] as? UIImage
-        imageOfPlace.contentMode = .scaleAspectFill
-        imageOfPlace.clipsToBounds = true
+        cinemaImage.image = info[.editedImage] as? UIImage
+        cinemaImage.contentMode = .scaleAspectFill
+        cinemaImage.clipsToBounds = true
+        
+        imageIsChanged = true
+        
         dismiss(animated: true)
     }
 }
