@@ -93,11 +93,12 @@
         <!--New Cinema-->
         <scene sceneID="LhT-lN-kGN">
             <objects>
-                <tableViewController id="vlA-M1-Nqk" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="PUy-7p-PYD">
+                <tableViewController id="vlA-M1-Nqk" customClass="NewCinemaViewController" customModule="MyCinema" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="PUy-7p-PYD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <inset key="separatorInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
                         <sections>
                             <tableViewSection id="Y8K-9n-uru">
                                 <cells>
@@ -121,60 +122,66 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="75" id="iBS-8s-dds">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="75" id="iBS-8s-dds">
                                         <rect key="frame" x="0.0" y="250" width="414" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iBS-8s-dds" id="6bt-ue-T10">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="74.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="F6e-DW-oiw">
-                                                    <rect key="frame" x="16" y="8" width="382" height="58.5"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="F6e-DW-oiw">
+                                                    <rect key="frame" x="16" y="8" width="382" height="62.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VTs-sq-wST">
-                                                            <rect key="frame" x="0.0" y="0.0" width="382" height="20.5"/>
-                                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="17"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="382" height="29"/>
+                                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Thin" family="Apple SD Gothic Neo" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите название кинотеатра" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Al-fU-dYr">
-                                                            <rect key="frame" x="0.0" y="28.5" width="382" height="30"/>
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="Введите название кинотеатра" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Al-fU-dYr">
+                                                            <rect key="frame" x="0.0" y="37" width="382" height="25.5"/>
                                                             <nil key="textColor"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <textInputTraits key="textInputTraits"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                                            <connections>
+                                                                <outlet property="delegate" destination="vlA-M1-Nqk" id="zIY-hh-YvV"/>
+                                                            </connections>
                                                         </textField>
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="F6e-DW-oiw" firstAttribute="leading" secondItem="6bt-ue-T10" secondAttribute="leading" constant="16" id="DhW-D1-ygO"/>
-                                                <constraint firstAttribute="bottom" secondItem="F6e-DW-oiw" secondAttribute="bottom" constant="8" id="eIb-iF-BNe"/>
+                                                <constraint firstAttribute="bottom" secondItem="F6e-DW-oiw" secondAttribute="bottom" constant="4" id="eIb-iF-BNe"/>
                                                 <constraint firstItem="F6e-DW-oiw" firstAttribute="top" secondItem="6bt-ue-T10" secondAttribute="top" constant="8" id="j6d-Al-dYc"/>
                                                 <constraint firstAttribute="trailing" secondItem="F6e-DW-oiw" secondAttribute="trailing" constant="16" id="zbF-PS-hOG"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="75" id="q46-5y-yZf">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="75" id="q46-5y-yZf">
                                         <rect key="frame" x="0.0" y="325" width="414" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="q46-5y-yZf" id="3D5-qm-Pcb">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="74.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="vnw-il-cdg">
-                                                    <rect key="frame" x="16" y="8" width="382" height="58.5"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="vnw-il-cdg">
+                                                    <rect key="frame" x="16" y="8" width="382" height="62.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Цена" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1qD-Sn-9e8">
-                                                            <rect key="frame" x="0.0" y="0.0" width="382" height="20.5"/>
-                                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="17"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="382" height="29"/>
+                                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Thin" family="Apple SD Gothic Neo" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите среднюю цены за билет" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vua-BS-KdW">
-                                                            <rect key="frame" x="0.0" y="28.5" width="382" height="30"/>
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="Введите среднюю цену за билет" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vua-BS-KdW">
+                                                            <rect key="frame" x="0.0" y="37" width="382" height="25.5"/>
                                                             <nil key="textColor"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <textInputTraits key="textInputTraits"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                                            <connections>
+                                                                <outlet property="delegate" destination="vlA-M1-Nqk" id="bVE-VF-z7Z"/>
+                                                            </connections>
                                                         </textField>
                                                     </subviews>
                                                 </stackView>
@@ -183,31 +190,34 @@
                                                 <constraint firstItem="vnw-il-cdg" firstAttribute="top" secondItem="3D5-qm-Pcb" secondAttribute="top" constant="8" id="IQZ-8i-6T8"/>
                                                 <constraint firstItem="vnw-il-cdg" firstAttribute="leading" secondItem="3D5-qm-Pcb" secondAttribute="leading" constant="16" id="Vic-rI-XZ4"/>
                                                 <constraint firstAttribute="trailing" secondItem="vnw-il-cdg" secondAttribute="trailing" constant="16" id="w28-Bs-Bq3"/>
-                                                <constraint firstAttribute="bottom" secondItem="vnw-il-cdg" secondAttribute="bottom" constant="8" id="yZH-3Z-kfv"/>
+                                                <constraint firstAttribute="bottom" secondItem="vnw-il-cdg" secondAttribute="bottom" constant="4" id="yZH-3Z-kfv"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="75" id="4vE-To-Of8">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="75" id="4vE-To-Of8">
                                         <rect key="frame" x="0.0" y="400" width="414" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4vE-To-Of8" id="ytk-Wb-5fW">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="74.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="R7z-4x-HL4">
-                                                    <rect key="frame" x="16" y="8" width="382" height="58.5"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="R7z-4x-HL4">
+                                                    <rect key="frame" x="16" y="8" width="382" height="62.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Местоположение" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqb-Mq-Tn6">
-                                                            <rect key="frame" x="0.0" y="0.0" width="382" height="20.5"/>
-                                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="17"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="382" height="29"/>
+                                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Thin" family="Apple SD Gothic Neo" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите местоположение кинотеатра" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6WY-ty-xif">
-                                                            <rect key="frame" x="0.0" y="28.5" width="382" height="30"/>
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="Введите местоположение кинотеатра" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6WY-ty-xif">
+                                                            <rect key="frame" x="0.0" y="37" width="382" height="25.5"/>
                                                             <nil key="textColor"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <textInputTraits key="textInputTraits"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                                            <connections>
+                                                                <outlet property="delegate" destination="vlA-M1-Nqk" id="x7M-k5-kpK"/>
+                                                            </connections>
                                                         </textField>
                                                     </subviews>
                                                 </stackView>
@@ -216,7 +226,7 @@
                                                 <constraint firstItem="R7z-4x-HL4" firstAttribute="top" secondItem="ytk-Wb-5fW" secondAttribute="top" constant="8" id="FvV-EE-fWB"/>
                                                 <constraint firstAttribute="trailing" secondItem="R7z-4x-HL4" secondAttribute="trailing" constant="16" id="aWK-78-4yk"/>
                                                 <constraint firstItem="R7z-4x-HL4" firstAttribute="leading" secondItem="ytk-Wb-5fW" secondAttribute="leading" constant="16" id="e8w-2S-FUq"/>
-                                                <constraint firstAttribute="bottom" secondItem="R7z-4x-HL4" secondAttribute="bottom" constant="8" id="nQC-0g-fOS"/>
+                                                <constraint firstAttribute="bottom" secondItem="R7z-4x-HL4" secondAttribute="bottom" constant="4" id="nQC-0g-fOS"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>

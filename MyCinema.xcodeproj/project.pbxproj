@@ -14,6 +14,7 @@
 		9891151C22E59E070050B82D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9891151B22E59E070050B82D /* MainViewController.swift */; };
 		9891151E22E5AC750050B82D /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9891151D22E5AC750050B82D /* CustomTableViewCell.swift */; };
 		9891152022E8467D0050B82D /* CinamaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9891151F22E8467D0050B82D /* CinamaModel.swift */; };
+		9891152222E853640050B82D /* NewCinemaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9891152122E853640050B82D /* NewCinemaViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		9891151B22E59E070050B82D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		9891151D22E5AC750050B82D /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		9891151F22E8467D0050B82D /* CinamaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinamaModel.swift; sourceTree = "<group>"; };
+		9891152122E853640050B82D /* NewCinemaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCinemaViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				9891151B22E59E070050B82D /* MainViewController.swift */,
 				9891151F22E8467D0050B82D /* CinamaModel.swift */,
 				9891151D22E5AC750050B82D /* CustomTableViewCell.swift */,
+				9891152122E853640050B82D /* NewCinemaViewController.swift */,
 				9891150D22E59DA50050B82D /* Main.storyboard */,
 				9891151022E59DA60050B82D /* Assets.xcassets */,
 				9891151222E59DA60050B82D /* LaunchScreen.storyboard */,
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9891151E22E5AC750050B82D /* CustomTableViewCell.swift in Sources */,
+				9891152222E853640050B82D /* NewCinemaViewController.swift in Sources */,
 				9891150A22E59DA50050B82D /* AppDelegate.swift in Sources */,
 				9891152022E8467D0050B82D /* CinamaModel.swift in Sources */,
 				9891151C22E59E070050B82D /* MainViewController.swift in Sources */,
