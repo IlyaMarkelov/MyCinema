@@ -16,6 +16,7 @@
 		9891152022E8467D0050B82D /* CinamaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9891151F22E8467D0050B82D /* CinamaModel.swift */; };
 		9891152222E853640050B82D /* NewCinemaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9891152122E853640050B82D /* NewCinemaViewController.swift */; };
 		9891152422E89A100050B82D /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9891152322E89A100050B82D /* StorageManager.swift */; };
+		9891152622E9BA700050B82D /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9891152522E9BA700050B82D /* RatingControl.swift */; };
 		AD6EC7CCAFD1C704213C2A5B /* Pods_MyCinema.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC83DF70843CE45275568D18 /* Pods_MyCinema.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +33,7 @@
 		9891151F22E8467D0050B82D /* CinamaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinamaModel.swift; sourceTree = "<group>"; };
 		9891152122E853640050B82D /* NewCinemaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCinemaViewController.swift; sourceTree = "<group>"; };
 		9891152322E89A100050B82D /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		9891152522E9BA700050B82D /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		CC83DF70843CE45275568D18 /* Pods_MyCinema.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyCinema.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D84DF5B4A3F40DE145EF0B2F /* Pods-MyCinema.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyCinema.debug.xcconfig"; path = "Target Support Files/Pods-MyCinema/Pods-MyCinema.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -79,10 +81,11 @@
 			children = (
 				9891150922E59DA50050B82D /* AppDelegate.swift */,
 				9891151B22E59E070050B82D /* MainViewController.swift */,
+				9891152122E853640050B82D /* NewCinemaViewController.swift */,
 				9891151F22E8467D0050B82D /* CinamaModel.swift */,
 				9891152322E89A100050B82D /* StorageManager.swift */,
 				9891151D22E5AC750050B82D /* CustomTableViewCell.swift */,
-				9891152122E853640050B82D /* NewCinemaViewController.swift */,
+				9891152522E9BA700050B82D /* RatingControl.swift */,
 				9891150D22E59DA50050B82D /* Main.storyboard */,
 				9891151022E59DA60050B82D /* Assets.xcassets */,
 				9891151222E59DA60050B82D /* LaunchScreen.storyboard */,
@@ -222,6 +225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9891152622E9BA700050B82D /* RatingControl.swift in Sources */,
 				9891151E22E5AC750050B82D /* CustomTableViewCell.swift in Sources */,
 				9891152222E853640050B82D /* NewCinemaViewController.swift in Sources */,
 				9891150A22E59DA50050B82D /* AppDelegate.swift in Sources */,
