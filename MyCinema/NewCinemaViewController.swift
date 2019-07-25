@@ -87,8 +87,15 @@ extension NewCinemaViewController: UITextFieldDelegate {
         }
     }
     
+    //MARK: Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier != "showMap" {return}
+        let mapVC = segue.destination as! MapViewController
+        mapVC.cinema = currentCinema
+    }
+    
     func saveCinema() {
-        
         
         var image: UIImage?
         
