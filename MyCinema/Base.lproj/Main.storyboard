@@ -70,6 +70,7 @@
                                     <outlet property="imageOfCinema" destination="jkU-IB-kqh" id="nfb-3e-siQ"/>
                                     <outlet property="locationLabel" destination="FB0-ft-Pf0" id="Td3-sr-34D"/>
                                     <outlet property="nameLabel" destination="Nf9-cT-oYY" id="9Nq-tn-dDg"/>
+                                    <segue destination="vlA-M1-Nqk" kind="show" identifier="showDetail" id="gqd-zD-kX2"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -78,7 +79,7 @@
                             <outlet property="delegate" destination="yzz-Pt-uME" id="UcU-xi-8pj"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Мои кинотеатры" id="dB0-X7-g3Z">
+                    <navigationItem key="navigationItem" title="Мои кинотеатры" largeTitleDisplayMode="never" id="dB0-X7-g3Z">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="xJj-p2-DF7">
                             <connections>
                                 <segue destination="Vhn-SR-FiX" kind="presentation" modalTransitionStyle="crossDissolve" id="j5P-Ip-Zja"/>
@@ -88,7 +89,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fmw-sK-r8O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="340.57971014492756" y="148.66071428571428"/>
+            <point key="canvasLocation" x="1284" y="149"/>
         </scene>
         <!--Новый кинотеатр-->
         <scene sceneID="LhT-lN-kGN">
@@ -168,7 +169,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="vnw-il-cdg">
                                                     <rect key="frame" x="16" y="8" width="382" height="62.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Цена" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1qD-Sn-9e8">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Адрес" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1qD-Sn-9e8">
                                                             <rect key="frame" x="0.0" y="0.0" width="382" height="29"/>
                                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Thin" family="Apple SD Gothic Neo" pointSize="20"/>
                                                             <nil key="textColor"/>
@@ -204,7 +205,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="R7z-4x-HL4">
                                                     <rect key="frame" x="16" y="8" width="382" height="62.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Местоположение" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqb-Mq-Tn6">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Город" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqb-Mq-Tn6">
                                                             <rect key="frame" x="0.0" y="0.0" width="382" height="29"/>
                                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Thin" family="Apple SD Gothic Neo" pointSize="20"/>
                                                             <nil key="textColor"/>
@@ -238,7 +239,7 @@
                             <outlet property="delegate" destination="vlA-M1-Nqk" id="LRV-Ol-Z32"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Новый кинотеатр" id="vAa-cc-vPe">
+                    <navigationItem key="navigationItem" title="Новый кинотеатр" largeTitleDisplayMode="always" id="vAa-cc-vPe">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Edo-9V-3Hg">
                             <connections>
                                 <action selector="cancelAction:" destination="vlA-M1-Nqk" id="Wnf-qj-fsp"/>
@@ -267,8 +268,8 @@
         <scene sceneID="CqT-kW-C3E">
             <objects>
                 <navigationController id="GIr-3w-mDO" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HwV-kk-Wci">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="HwV-kk-Wci">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="25"/>
@@ -280,7 +281,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uXs-PU-Ta9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-577" y="149"/>
+            <point key="canvasLocation" x="525" y="149"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1Wr-Bi-e0d">
@@ -298,10 +299,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yDX-Xt-L9a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1147.8260869565217" y="148.66071428571428"/>
+            <point key="canvasLocation" x="2058" y="-565"/>
         </scene>
     </scenes>
     <resources>
         <image name="Photo" width="195" height="196"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="gqd-zD-kX2"/>
+    </inferredMetricsTieBreakers>
 </document>

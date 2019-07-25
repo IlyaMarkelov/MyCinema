@@ -10,6 +10,7 @@ import UIKit
 
 class NewCinemaViewController: UITableViewController {
     
+    var currentCinema: Cinema?
     var imageIsChanged = false
 
     @IBOutlet weak var saveButton: UIBarButtonItem!
@@ -23,6 +24,7 @@ class NewCinemaViewController: UITableViewController {
         tableView.tableFooterView = UIView()
         saveButton.isEnabled = false
         cinemaName.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
+        setupEditScreen()
     }
     
     // MARK: Table view delegate
@@ -83,7 +85,7 @@ extension NewCinemaViewController: UITextFieldDelegate {
         }
     }
     
-    func saveNewCinema() {
+    func saveCinema() {
         
         
         var image: UIImage?
@@ -101,9 +103,41 @@ extension NewCinemaViewController: UITextFieldDelegate {
                                location: cinemaLocation.text,
                                imageData: imageData)
         
-        StorageManager.saveObject(newCinema)
+        if currentCinema != nil {
+            try! realm.write {
+                currentCinema?.name = newCinema.name
+                currentCinema?.location = newCinema.location
+                currentCinema?.detailLocation = newCinema.detailLocation
+                currentCinema?.imageData = newCinema.imageData
+            }
+        } else {
+            StorageManager.saveObject(newCinema)
+        }
     }
     
+    private func setupEditScreen() {
+        if currentCinema != nil {
+            
+            setupNavigationBar()
+            imageIsChanged = true
+            
+            guard let data = currentCinema?.imageData, let image = UIImage(data: data) else {return}
+            cinemaImage.image = image
+            cinemaImage.contentMode = .scaleAspectFill
+            cinemaName.text = currentCinema?.name
+            cinemaDetailLocation.text = currentCinema?.detailLocation
+            cinemaLocation.text = currentCinema?.location
+        }
+    }
+    
+    private func setupNavigationBar() {
+        if let topItem = navigationController?.navigationBar.topItem {
+            topItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        }
+        navigationItem.leftBarButtonItem = nil
+        title = currentCinema?.name
+        saveButton.isEnabled = true
+    }
 }
 
 
