@@ -72,6 +72,10 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
 
     //MARK: table view delegate
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
      func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
         let cinema = movieTheaters[indexPath.row]

@@ -21,7 +21,8 @@ class NewCinemaViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.tableFooterView = UIView()
+        
+        tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 1))
         saveButton.isEnabled = false
         cinemaName.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
         setupEditScreen()
