@@ -197,6 +197,7 @@
                         <outlet property="cinemaImage" destination="rzV-st-E39" id="to1-0f-syQ"/>
                         <outlet property="cinemaLocation" destination="6WY-ty-xif" id="GPD-X4-a38"/>
                         <outlet property="cinemaName" destination="0Al-fU-dYr" id="RTw-gp-q37"/>
+                        <outlet property="ratingControl" destination="F8w-Nc-Go2" id="4Yc-mT-sdH"/>
                         <outlet property="saveButton" destination="t2Z-A3-FHC" id="GMp-3e-VtU"/>
                     </connections>
                 </tableViewController>
@@ -232,39 +233,56 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="QmU-PG-aG2">
-                                                    <rect key="frame" x="96" y="8" width="302" height="68.5"/>
+                                                    <rect key="frame" x="96" y="8" width="208" height="68.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJI-fO-zvY">
-                                                            <rect key="frame" x="0.0" y="0.0" width="302" height="24.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="208" height="24.5"/>
                                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R36-Es-xdi">
-                                                            <rect key="frame" x="0.0" y="27.5" width="302" height="19.5"/>
+                                                            <rect key="frame" x="0.0" y="27.5" width="208" height="19.5"/>
                                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ARD-en-dk8">
-                                                            <rect key="frame" x="0.0" y="50" width="302" height="18.5"/>
+                                                            <rect key="frame" x="0.0" y="50" width="208" height="18.5"/>
                                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
+                                                <view contentMode="scaleToFill" placeholderIntrinsicWidth="90" placeholderIntrinsicHeight="14" translatesAutoresizingMaskIntoConstraints="NO" id="wqJ-D5-kcd" customClass="CosmosView" customModule="Cosmos">
+                                                    <rect key="frame" x="312" y="35.5" width="90" height="14"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="90" id="jrM-0P-nXc"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                                            <real key="value" value="14"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="image" keyPath="filledImage" value="filledStar"/>
+                                                        <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="emptyStar"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="QmU-PG-aG2" secondAttribute="trailing" constant="16" id="1gm-o5-lcZ"/>
                                                 <constraint firstItem="xkV-kf-ijc" firstAttribute="centerY" secondItem="AwI-Y4-iTe" secondAttribute="centerY" id="5cj-TD-9oF"/>
                                                 <constraint firstAttribute="bottom" secondItem="QmU-PG-aG2" secondAttribute="bottom" constant="8" id="EJy-0M-9D2"/>
                                                 <constraint firstItem="QmU-PG-aG2" firstAttribute="leading" secondItem="xkV-kf-ijc" secondAttribute="trailing" constant="16" id="Kzv-Nk-vA1"/>
+                                                <constraint firstItem="wqJ-D5-kcd" firstAttribute="centerY" secondItem="AwI-Y4-iTe" secondAttribute="centerY" id="Ya8-UO-6UR"/>
                                                 <constraint firstItem="QmU-PG-aG2" firstAttribute="top" secondItem="AwI-Y4-iTe" secondAttribute="top" constant="8" id="jzt-eo-iGb"/>
+                                                <constraint firstItem="wqJ-D5-kcd" firstAttribute="leading" secondItem="QmU-PG-aG2" secondAttribute="trailing" constant="8" id="pgd-D2-l8p"/>
                                                 <constraint firstItem="xkV-kf-ijc" firstAttribute="leading" secondItem="AwI-Y4-iTe" secondAttribute="leading" constant="15" id="xHD-HI-cUA"/>
+                                                <constraint firstItem="wqJ-D5-kcd" firstAttribute="trailing" secondItem="AwI-Y4-iTe" secondAttribute="trailingMargin" constant="8" id="xXb-hg-QbD"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="cosmosView" destination="wqJ-D5-kcd" id="zqo-qa-Slz"/>
                                             <outlet property="detailLocationLabel" destination="R36-Es-xdi" id="dpc-0Q-vQL"/>
                                             <outlet property="imageOfCinema" destination="xkV-kf-ijc" id="txm-W1-tRX"/>
                                             <outlet property="locationLabel" destination="ARD-en-dk8" id="9sx-mT-uez"/>
@@ -367,6 +385,8 @@
     <resources>
         <image name="AZ" width="25" height="24"/>
         <image name="Photo" width="195" height="196"/>
+        <image name="emptyStar" width="255" height="256"/>
+        <image name="filledStar" width="237.5" height="238"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="k20-h7-v5z"/>

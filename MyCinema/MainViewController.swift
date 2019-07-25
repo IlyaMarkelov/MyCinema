@@ -46,27 +46,19 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if isFiltering {
             return filteredMovieTheaters.count
         }
-        return movieTheaters.isEmpty ? 0 :  movieTheaters.count
+        return movieTheaters.count
     }
     
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
 
-        var cinema = Cinema()
-
-        if isFiltering {
-            cinema = filteredMovieTheaters[indexPath.row]
-        } else {
-            cinema = movieTheaters[indexPath.row]
-        }
+        let cinema = isFiltering ? filteredMovieTheaters[indexPath.row] : movieTheaters[indexPath.row]
         
         cell.nameLabel?.text = cinema.name
         cell.detailLocationLabel.text = cinema.detailLocation
         cell.locationLabel.text = cinema.location
         cell.imageOfCinema.image = UIImage(data: cinema.imageData!)
-
-        cell.imageOfCinema?.layer.cornerRadius = cell.imageOfCinema.frame.size.height / 2
-        cell.imageOfCinema?.clipsToBounds = true
+        cell.cosmosView.rating = cinema.rating
 
         return cell
     }
@@ -92,12 +84,9 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             guard let indexPath = tableView.indexPathForSelectedRow else {return}
-            let cinema: Cinema
-            if isFiltering {
-                cinema = filteredMovieTheaters[indexPath.row]
-            } else {
-                cinema = movieTheaters[indexPath.row]
-            }
+            
+            let cinema = isFiltering ? filteredMovieTheaters[indexPath.row] : movieTheaters[indexPath.row]
+            
             let newCinemaVC = segue.destination as! NewCinemaViewController
             newCinemaVC.currentCinema = cinema
         }

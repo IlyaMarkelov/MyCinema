@@ -18,6 +18,7 @@ class NewCinemaViewController: UITableViewController {
     @IBOutlet weak var cinemaName: UITextField!
     @IBOutlet weak var cinemaDetailLocation: UITextField!
     @IBOutlet weak var cinemaLocation: UITextField!
+    @IBOutlet weak var ratingControl: RatingControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -102,7 +103,8 @@ extension NewCinemaViewController: UITextFieldDelegate {
         let newCinema = Cinema(name: cinemaName.text!,
                                detailLocation: cinemaDetailLocation.text,
                                location: cinemaLocation.text,
-                               imageData: imageData)
+                               imageData: imageData,
+                               rating: Double(ratingControl.rating))
         
         if currentCinema != nil {
             try! realm.write {
@@ -110,6 +112,7 @@ extension NewCinemaViewController: UITextFieldDelegate {
                 currentCinema?.location = newCinema.location
                 currentCinema?.detailLocation = newCinema.detailLocation
                 currentCinema?.imageData = newCinema.imageData
+                currentCinema?.rating = newCinema.rating
             }
         } else {
             StorageManager.saveObject(newCinema)
@@ -128,6 +131,7 @@ extension NewCinemaViewController: UITextFieldDelegate {
             cinemaName.text = currentCinema?.name
             cinemaDetailLocation.text = currentCinema?.detailLocation
             cinemaLocation.text = currentCinema?.location
+            ratingControl.rating = Int(currentCinema!.rating)
         }
     }
     
