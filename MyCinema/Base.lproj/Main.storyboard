@@ -251,10 +251,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="cinemaDetailLocation" destination="vua-BS-KdW" id="Vmw-HM-SCS"/>
                         <outlet property="cinemaImage" destination="rzV-st-E39" id="to1-0f-syQ"/>
                         <outlet property="cinemaLocation" destination="6WY-ty-xif" id="GPD-X4-a38"/>
                         <outlet property="cinemaName" destination="0Al-fU-dYr" id="RTw-gp-q37"/>
-                        <outlet property="cinemaPrice" destination="vua-BS-KdW" id="Vmw-HM-SCS"/>
                         <outlet property="saveButton" destination="t2Z-A3-FHC" id="GMp-3e-VtU"/>
                     </connections>
                 </tableViewController>

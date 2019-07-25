@@ -10,22 +10,18 @@ import UIKit
 
 class NewCinemaViewController: UITableViewController {
     
-    var newCinema: Cinema?
     var imageIsChanged = false
 
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var cinemaImage: UIImageView!
     @IBOutlet weak var cinemaName: UITextField!
-    @IBOutlet weak var cinemaPrice: UITextField!
+    @IBOutlet weak var cinemaDetailLocation: UITextField!
     @IBOutlet weak var cinemaLocation: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         tableView.tableFooterView = UIView()
-        
         saveButton.isEnabled = false
-        
         cinemaName.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
     }
     
@@ -89,6 +85,7 @@ extension NewCinemaViewController: UITextFieldDelegate {
     
     func saveNewCinema() {
         
+        
         var image: UIImage?
         
         if imageIsChanged {
@@ -97,11 +94,14 @@ extension NewCinemaViewController: UITextFieldDelegate {
             image = #imageLiteral(resourceName: "imagePlaceHolder")
         }
         
-        newCinema = Cinema(name: cinemaName.text!,
-                           detailLocation: cinemaPrice.text,
-                           location: cinemaLocation.text,
-                           image: image,
-                           cinemaImage: nil)
+        let imageData = image?.pngData()
+        
+        let newCinema = Cinema(name: cinemaName.text!,
+                               detailLocation: cinemaDetailLocation.text,
+                               location: cinemaLocation.text,
+                               imageData: imageData)
+        
+        StorageManager.saveObject(newCinema)
     }
     
 }

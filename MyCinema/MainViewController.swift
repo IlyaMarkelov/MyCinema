@@ -7,39 +7,37 @@
 //
 
 import UIKit
+import RealmSwift
 
 class MainViewController: UITableViewController {    
     
-    var movieTheaters = Cinema.getCinema()
+    var movieTheaters: Results<Cinema>!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        movieTheaters = realm.objects(Cinema.self)
     }
 
     // MARK: - Table view data source
    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return movieTheaters.count
+        return movieTheaters.isEmpty ? 0 :  movieTheaters.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
-        
+
         let cinema = movieTheaters[indexPath.row]
-        
+
         cell.nameLabel?.text = cinema.name
         cell.detailLocationLabel.text = cinema.detailLocation
         cell.locationLabel.text = cinema.location
-        
-        if cinema.image == nil {
-            cell.imageOfCinema.image = UIImage(named: cinema.cinemaImage!)
-        } else {
-            cell.imageOfCinema.image = cinema.image
-        }
-        
-        
+        cell.imageOfCinema.image = UIImage(data: cinema.imageData!)
+
         cell.imageOfCinema?.layer.cornerRadius = cell.imageOfCinema.frame.size.height / 2
         cell.imageOfCinema?.clipsToBounds = true
-        
+
         return cell
     }
 
@@ -57,7 +55,6 @@ class MainViewController: UITableViewController {
         
         guard let newCinemaVC = segue.source as? NewCinemaViewController else {return}
         newCinemaVC.saveNewCinema()
-        movieTheaters.append(newCinemaVC.newCinema!)
         tableView.reloadData()
     }
 }

@@ -6,31 +6,20 @@
 //  Copyright © 2019 Илья Маркелов. All rights reserved.
 //
 
-import UIKit
+import RealmSwift
 
-struct Cinema {
-    var name: String
-    var detailLocation: String?
-    var location: String?
-    var image: UIImage?
-    var cinemaImage: String?
+class Cinema: Object {
+    @objc dynamic var name = ""
+    @objc dynamic var detailLocation: String?
+    @objc dynamic var location: String?
+    @objc dynamic var imageData: Data?
     
-    static let cinemaNames = [
-        "СИНЕМА ПАРК Метрополис", "KAPO SKY 17 Авиапарк",
-        "Синема Парк", "Киномакс-Водный", "Кинотеатр Юность",
-        "Формула Кино на Полежаевской", "Кинотеатр Москва",
-        "Искра", "Балтика", "Кинотеатр Пионер","Киноцентр Соловей", "Полет",
-        "Киносфера IMAX", "Каро 11 Октябрь", "Алмаз Синема Алтуфьевский"
-    ]
-
-    static func getCinema() -> [Cinema] {
-        
-        var cinema = [Cinema]()
-        
-        for movie in cinemaNames {
-            cinema.append(Cinema(name: movie, detailLocation: "100-200", location: "Москва", image: nil, cinemaImage: movie))
-        }
-        
-        return cinema
+    convenience init(name: String, detailLocation: String?, location: String?, imageData: Data?) {
+        self.init()
+        self.name = name
+        self.location = location
+        self.detailLocation = detailLocation
+        self.imageData = imageData
     }
+    
 }
