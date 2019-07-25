@@ -6,91 +6,10 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Мои кинотеатры-->
-        <scene sceneID="Qtf-WD-wXU">
-            <objects>
-                <tableViewController id="yzz-Pt-uME" customClass="MainViewController" customModule="MyCinema" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="w7a-G3-HQI">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="gIn-WT-cbj" customClass="CustomTableViewCell" customModule="MyCinema" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="85"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gIn-WT-cbj" id="0Ey-tq-Hvt">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="84.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jkU-IB-kqh">
-                                            <rect key="frame" x="15" y="10" width="65" height="65"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="65" id="KAf-TO-WEn"/>
-                                                <constraint firstAttribute="width" constant="65" id="wkl-lA-TZp"/>
-                                            </constraints>
-                                        </imageView>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="7r4-0r-GN4">
-                                            <rect key="frame" x="96" y="8" width="302" height="68.5"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nf9-cT-oYY">
-                                                    <rect key="frame" x="0.0" y="0.0" width="302" height="24.5"/>
-                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ee9-s5-84W">
-                                                    <rect key="frame" x="0.0" y="27.5" width="302" height="19.5"/>
-                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="15"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FB0-ft-Pf0">
-                                                    <rect key="frame" x="0.0" y="50" width="302" height="18.5"/>
-                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="13"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </stackView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="jkU-IB-kqh" firstAttribute="centerY" secondItem="0Ey-tq-Hvt" secondAttribute="centerY" id="E6K-Aa-nIL"/>
-                                        <constraint firstAttribute="trailing" secondItem="7r4-0r-GN4" secondAttribute="trailing" constant="16" id="Pif-xK-l9P"/>
-                                        <constraint firstItem="7r4-0r-GN4" firstAttribute="leading" secondItem="jkU-IB-kqh" secondAttribute="trailing" constant="16" id="S3l-ye-eiF"/>
-                                        <constraint firstAttribute="bottom" secondItem="7r4-0r-GN4" secondAttribute="bottom" constant="8" id="WcX-mB-ash"/>
-                                        <constraint firstItem="jkU-IB-kqh" firstAttribute="leading" secondItem="0Ey-tq-Hvt" secondAttribute="leading" constant="15" id="iC5-Qu-b9V"/>
-                                        <constraint firstItem="7r4-0r-GN4" firstAttribute="top" secondItem="0Ey-tq-Hvt" secondAttribute="top" constant="8" id="vGx-uo-Ojl"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="detailLocationLabel" destination="Ee9-s5-84W" id="7hy-90-fLQ"/>
-                                    <outlet property="imageOfCinema" destination="jkU-IB-kqh" id="nfb-3e-siQ"/>
-                                    <outlet property="locationLabel" destination="FB0-ft-Pf0" id="Td3-sr-34D"/>
-                                    <outlet property="nameLabel" destination="Nf9-cT-oYY" id="9Nq-tn-dDg"/>
-                                    <segue destination="vlA-M1-Nqk" kind="show" identifier="showDetail" id="gqd-zD-kX2"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="yzz-Pt-uME" id="rgl-DD-37C"/>
-                            <outlet property="delegate" destination="yzz-Pt-uME" id="UcU-xi-8pj"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Мои кинотеатры" largeTitleDisplayMode="never" id="dB0-X7-g3Z">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="xJj-p2-DF7">
-                            <connections>
-                                <segue destination="Vhn-SR-FiX" kind="presentation" modalTransitionStyle="crossDissolve" id="j5P-Ip-Zja"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fmw-sK-r8O" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1284" y="149"/>
-        </scene>
         <!--Новый кинотеатр-->
         <scene sceneID="LhT-lN-kGN">
             <objects>
@@ -111,7 +30,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Photo" translatesAutoresizingMaskIntoConstraints="NO" id="rzV-st-E39">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="249.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="249.50000000000006"/>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -264,6 +183,118 @@
             </objects>
             <point key="canvasLocation" x="2057.971014492754" y="148.66071428571428"/>
         </scene>
+        <!--Мои кинотеатры-->
+        <scene sceneID="tpD-Ik-txd">
+            <objects>
+                <viewController id="2kn-cJ-kHh" customClass="MainViewController" customModule="MyCinema" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1kL-G8-yi6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mm6-L3-Fyg">
+                                <rect key="frame" x="0.0" y="117" width="414" height="779"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="O2N-xz-qtE" customClass="CustomTableViewCell" customModule="MyCinema" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="85"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="O2N-xz-qtE" id="AwI-Y4-iTe">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="84.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xkV-kf-ijc">
+                                                    <rect key="frame" x="15" y="10" width="65" height="65"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="65" id="dvO-TA-HrV"/>
+                                                        <constraint firstAttribute="width" constant="65" id="wSm-89-55l"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="QmU-PG-aG2">
+                                                    <rect key="frame" x="96" y="8" width="302" height="68.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJI-fO-zvY">
+                                                            <rect key="frame" x="0.0" y="0.0" width="302" height="24.5"/>
+                                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R36-Es-xdi">
+                                                            <rect key="frame" x="0.0" y="27.5" width="302" height="19.5"/>
+                                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ARD-en-dk8">
+                                                            <rect key="frame" x="0.0" y="50" width="302" height="18.5"/>
+                                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="13"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="QmU-PG-aG2" secondAttribute="trailing" constant="16" id="1gm-o5-lcZ"/>
+                                                <constraint firstItem="xkV-kf-ijc" firstAttribute="centerY" secondItem="AwI-Y4-iTe" secondAttribute="centerY" id="5cj-TD-9oF"/>
+                                                <constraint firstAttribute="bottom" secondItem="QmU-PG-aG2" secondAttribute="bottom" constant="8" id="EJy-0M-9D2"/>
+                                                <constraint firstItem="QmU-PG-aG2" firstAttribute="leading" secondItem="xkV-kf-ijc" secondAttribute="trailing" constant="16" id="Kzv-Nk-vA1"/>
+                                                <constraint firstItem="QmU-PG-aG2" firstAttribute="top" secondItem="AwI-Y4-iTe" secondAttribute="top" constant="8" id="jzt-eo-iGb"/>
+                                                <constraint firstItem="xkV-kf-ijc" firstAttribute="leading" secondItem="AwI-Y4-iTe" secondAttribute="leading" constant="15" id="xHD-HI-cUA"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="detailLocationLabel" destination="R36-Es-xdi" id="dpc-0Q-vQL"/>
+                                            <outlet property="imageOfCinema" destination="xkV-kf-ijc" id="txm-W1-tRX"/>
+                                            <outlet property="locationLabel" destination="ARD-en-dk8" id="9sx-mT-uez"/>
+                                            <outlet property="nameLabel" destination="cJI-fO-zvY" id="ptn-95-MnK"/>
+                                            <segue destination="vlA-M1-Nqk" kind="show" identifier="showDetail" id="k20-h7-v5z"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="2kn-cJ-kHh" id="iHP-0x-UpG"/>
+                                    <outlet property="delegate" destination="2kn-cJ-kHh" id="9u4-xM-tIv"/>
+                                </connections>
+                            </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bkT-vK-O8W">
+                                <rect key="frame" x="0.0" y="88" width="414" height="29"/>
+                                <segments>
+                                    <segment title="Дата"/>
+                                    <segment title="Имя"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mm6-L3-Fyg" firstAttribute="top" secondItem="bkT-vK-O8W" secondAttribute="bottom" constant="1" id="08q-WI-zCG"/>
+                            <constraint firstItem="bkT-vK-O8W" firstAttribute="top" secondItem="KY2-gR-h0y" secondAttribute="top" id="0CF-Ll-fzj"/>
+                            <constraint firstItem="bkT-vK-O8W" firstAttribute="top" secondItem="KY2-gR-h0y" secondAttribute="top" id="BzA-lr-6uM"/>
+                            <constraint firstItem="mm6-L3-Fyg" firstAttribute="leading" secondItem="KY2-gR-h0y" secondAttribute="leading" id="Ckb-UC-BjJ"/>
+                            <constraint firstItem="bkT-vK-O8W" firstAttribute="trailing" secondItem="KY2-gR-h0y" secondAttribute="trailing" id="Lmq-pR-10s"/>
+                            <constraint firstItem="bkT-vK-O8W" firstAttribute="trailing" secondItem="KY2-gR-h0y" secondAttribute="trailing" id="S8O-NG-YkS"/>
+                            <constraint firstItem="bkT-vK-O8W" firstAttribute="leading" secondItem="KY2-gR-h0y" secondAttribute="leading" id="bo0-dk-msA"/>
+                            <constraint firstItem="bkT-vK-O8W" firstAttribute="leading" secondItem="KY2-gR-h0y" secondAttribute="leading" id="eDU-HF-7Ba"/>
+                            <constraint firstItem="mm6-L3-Fyg" firstAttribute="trailing" secondItem="KY2-gR-h0y" secondAttribute="trailing" id="p8m-Qd-CFh"/>
+                            <constraint firstAttribute="bottom" secondItem="mm6-L3-Fyg" secondAttribute="bottom" id="yFj-9M-ouJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="KY2-gR-h0y"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Мои кинотеатры" largeTitleDisplayMode="never" id="oEn-nh-2VH">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="AZ" id="Kga-Jy-ujo"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="HkR-qB-uZA">
+                            <connections>
+                                <segue destination="Vhn-SR-FiX" kind="presentation" id="SmQ-oU-68T"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="mm6-L3-Fyg" id="akQ-Vb-T2I"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9rP-nH-9PH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1313.0434782608697" y="148.66071428571428"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="CqT-kW-C3E">
             <objects>
@@ -276,7 +307,7 @@
                         </textAttributes>
                     </navigationBar>
                     <connections>
-                        <segue destination="yzz-Pt-uME" kind="relationship" relationship="rootViewController" id="wHw-xa-GqH"/>
+                        <segue destination="2kn-cJ-kHh" kind="relationship" relationship="rootViewController" id="VXk-Rn-rZV"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uXs-PU-Ta9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -303,9 +334,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="AZ" width="25" height="24"/>
         <image name="Photo" width="195" height="196"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gqd-zD-kX2"/>
+        <segue reference="k20-h7-v5z"/>
     </inferredMetricsTieBreakers>
 </document>
