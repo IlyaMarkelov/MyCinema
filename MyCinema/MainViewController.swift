@@ -11,30 +11,55 @@ import RealmSwift
 
 class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    private let searchController = UISearchController(searchResultsController: nil)
+    private var movieTheaters: Results<Cinema>!
+    private var filteredMovieTheaters: Results<Cinema>!
+    private var ascendingSorting = true
+    private var searchBarIsEmpty: Bool {
+        guard let text = searchController.searchBar.text else { return false }
+        return text.isEmpty
+    }
+    private var isFiltering: Bool {
+        return searchController.isActive && !searchBarIsEmpty
+    }
+    
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var reverseSortingButton: UIBarButtonItem!
-    
-    var movieTheaters: Results<Cinema>!
-    var ascendingSorting = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         movieTheaters = realm.objects(Cinema.self)
+        
+        //Setup the search controller
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Найти"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
     }
 
     // MARK: - Table view data source
-   
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isFiltering {
+            return filteredMovieTheaters.count
+        }
         return movieTheaters.isEmpty ? 0 :  movieTheaters.count
     }
     
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
 
-        let cinema = movieTheaters[indexPath.row]
+        var cinema = Cinema()
 
+        if isFiltering {
+            cinema = filteredMovieTheaters[indexPath.row]
+        } else {
+            cinema = movieTheaters[indexPath.row]
+        }
+        
         cell.nameLabel?.text = cinema.name
         cell.detailLocationLabel.text = cinema.detailLocation
         cell.locationLabel.text = cinema.location
@@ -63,7 +88,12 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             guard let indexPath = tableView.indexPathForSelectedRow else {return}
-            let cinema = movieTheaters[indexPath.row]
+            let cinema: Cinema
+            if isFiltering {
+                cinema = filteredMovieTheaters[indexPath.row]
+            } else {
+                cinema = movieTheaters[indexPath.row]
+            }
             let newCinemaVC = segue.destination as! NewCinemaViewController
             newCinemaVC.currentCinema = cinema
         }
@@ -99,6 +129,19 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         } else {
             movieTheaters = movieTheaters.sorted(byKeyPath: "name", ascending: ascendingSorting)
         }
+        tableView.reloadData()
+    }
+}
+
+extension MainViewController: UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        filterContentForSearchText(searchController.searchBar.text!)
+    }
+    
+    private func filterContentForSearchText(_ searchText: String) {
+        filteredMovieTheaters = movieTheaters.filter("name CONTAINS[c] %@ OR location CONTAINS[c] %@ OR detailLocation CONTAINS[c] %@", searchText, searchText, searchText)
+        
         tableView.reloadData()
     }
 }
