@@ -13,6 +13,7 @@ class Cinema: Object {
     @objc dynamic var detailLocation: String?
     @objc dynamic var location: String?
     @objc dynamic var imageData: Data?
+    @objc dynamic var date = Date()
     
     convenience init(name: String, detailLocation: String?, location: String?, imageData: Data?) {
         self.init()

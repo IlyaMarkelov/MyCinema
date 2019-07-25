@@ -12,7 +12,11 @@ import RealmSwift
 class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var reverseSortingButton: UIBarButtonItem!
+    
     var movieTheaters: Results<Cinema>!
+    var ascendingSorting = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,6 +74,31 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         guard let newCinemaVC = segue.source as? NewCinemaViewController else {return}
         newCinemaVC.saveCinema()
+        tableView.reloadData()
+    }
+    @IBAction func sortSelection(_ sender: UISegmentedControl) {
+        
+        sorting()
+    }
+    
+    @IBAction func reversefSorting(_ sender: Any) {
+        ascendingSorting.toggle()
+        
+        if ascendingSorting {
+            reverseSortingButton.image = #imageLiteral(resourceName: "AZ")
+        } else {
+            reverseSortingButton.image = #imageLiteral(resourceName: "ZA")
+        }
+        
+        sorting()
+    }
+    
+    private func sorting() {
+        if segmentedControl.selectedSegmentIndex == 0 {
+            movieTheaters = movieTheaters.sorted(byKeyPath: "date", ascending: ascendingSorting)
+        } else {
+            movieTheaters = movieTheaters.sorted(byKeyPath: "name", ascending: ascendingSorting)
+        }
         tableView.reloadData()
     }
 }
